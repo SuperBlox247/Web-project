@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plan your Yellowstone National Park trip: park entrances, when to visit, and a free trip planner request form.">
+  <title>Explore Yellowstone | Plan Your Trip</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== Header & navigation ===== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Explore Yellowstone</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="attractions.html">Things to Do</a></li>
+          <li><a href="plan.html" aria-current="page">Plan Your Trip</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== Page title ===== -->
+    <section class="page-banner">
+      <div class="container">
+        <h1>Plan Your Trip</h1>
+        <p>Everything you need to know before you go, plus a free personalized trip planner.</p>
+      </div>
+    </section>
+
+    <!-- ===== Getting there ===== -->
+    <section class="section">
+      <div class="container intro">
+        <h2>Getting There</h2>
+        <p>Yellowstone has five entrances. Choose the one closest to the sights you want to see first.</p>
+        <ul>
+          <li><strong>North Entrance</strong> (Gardiner, Montana): closest to Mammoth Hot Springs</li>
+          <li><strong>Northeast Entrance</strong> (Cooke City, Montana): the gateway to Lamar Valley</li>
+          <li><strong>East Entrance</strong> (near Cody, Wyoming): passes Yellowstone Lake</li>
+          <li><strong>South Entrance</strong> (from Grand Teton National Park): a scenic drive between two parks</li>
+          <li><strong>West Entrance</strong> (West Yellowstone, Montana): the quickest route to Old Faithful</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== When to visit ===== -->
+    <section class="section section-alt">
+      <div class="container intro">
+        <h2>When to Visit</h2>
+        <p>
+          <strong>Summer</strong> is the most popular season. All park roads are open, and the weather
+          is warm, but popular areas can be crowded. <strong>Fall</strong> brings fewer visitors and
+          active wildlife. In <strong>winter</strong>, most park roads close to regular cars, and visitors
+          explore by guided snowcoach or snowmobile. Check the
+          <a href="https://www.nps.gov/yell/planyourvisit/conditions.htm">current park conditions</a>
+          for exact road opening and closing dates before you travel.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Trip planner form ===== -->
+    <section class="section">
+      <div class="container">
+        <h2>Request a Free Trip Planner</h2>
+        <p>Fill out the form below, and we'll send you a trip planner based on your interests. Fields marked with * are required.</p>
+
+        <!-- Live trip countdown (filled in by JavaScript) -->
+        <p id="countdown" class="countdown" aria-live="polite"></p>
+
+        <!-- Error summary (filled in by JavaScript) -->
+        <div id="form-errors" class="form-errors" role="alert" aria-live="assertive"></div>
+
+        <form id="trip-form" action="#" method="post" novalidate>
+
+          <label for="name">Full name *</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+
+          <label for="email">Email address *</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+
+          <label for="arrival">Planned arrival date *</label>
+          <input type="date" id="arrival" name="arrival" required>
+
+          <label for="group-size">Number of travelers</label>
+          <input type="number" id="group-size" name="group-size" min="1" max="20" value="2">
+
+          <fieldset>
+            <legend>What interests you?</legend>
+            <input type="checkbox" id="int-geysers" name="interests" value="geysers">
+            <label for="int-geysers">Geysers</label>
+            <input type="checkbox" id="int-wildlife" name="interests" value="wildlife">
+            <label for="int-wildlife">Wildlife</label>
+            <input type="checkbox" id="int-hiking" name="interests" value="hiking">
+            <label for="int-hiking">Hiking</label>
+            <input type="checkbox" id="int-photo" name="interests" value="photography">
+            <label for="int-photo">Photography</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>Which season are you visiting?</legend>
+            <input type="radio" id="season-summer" name="season" value="summer" checked>
+            <label for="season-summer">Summer</label>
+            <input type="radio" id="season-fall" name="season" value="fall">
+            <label for="season-fall">Fall</label>
+            <input type="radio" id="season-winter" name="season" value="winter">
+            <label for="season-winter">Winter</label>
+            <input type="radio" id="season-spring" name="season" value="spring">
+            <label for="season-spring">Spring</label>
+          </fieldset>
+
+          <label for="questions">Questions or special requests</label>
+          <textarea id="questions" name="questions" rows="5"></textarea>
+
+          <button type="submit" class="button form-submit">Send My Trip Planner</button>
+        </form>
+
+        <!-- Thank-you message (shown by JavaScript after a valid submit) -->
+        <div id="form-success" class="form-success" aria-live="polite"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>Helpful Links</h2>
+        <ul class="footer-links">
+          <li><a href="https://www.nps.gov/yell/">National Park Service: Yellowstone</a></li>
+          <li><a href="https://www.yellowstonenationalparklodges.com/">Yellowstone National Park Lodges</a></li>
+          <li><a href="https://www.yellowstone.org/">Yellowstone Forever</a></li>
+        </ul>
+      </div>
+      <div>
+        <p>&copy; 2026 Your Name. Created for IMM 120.</p>
+        <p>Photo credits: list your image sources here.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
